@@ -13,11 +13,15 @@ reduce procrastination without streaks, guilt, or pressure.
 - Python standard library only for the core. No dependencies to install.
 
 ## Build, test, run
-- Run: `python -m focus_session_tracker` (see README for commands)
+- Run: `python3 -m focus_session_tracker` (see README for commands)
 - Tests: plain asserts, runnable with or without pytest:
-  `python -m pytest`
+  `python3 run_tests.py` (no pytest needed) or `python3 -m pytest`
 - Keep the CLI, the session store, and the reporting code separate so each
-  can be tested alone.
+  can be tested alone: `cli.py`, `store.py`, `timer.py`, `reports.py`.
+- Timer code takes `now` as an argument; tests use a fake clock
+  (`tests/helpers.py`), never real waiting.
+- After changing any output, rebuild the demo:
+  `python3 scripts/build_demo.py` (`tests/test_demo.py` checks it).
 
 ## Conventions
 - Small functions, clear names, minimal abstraction.

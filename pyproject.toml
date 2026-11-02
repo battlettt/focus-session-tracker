@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "focus-session-tracker"
+version = "1.0.0"
+description = "Local-only command line focus session tracker"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = []
+
+[project.scripts]
+focus = "focus_session_tracker.cli:main"
+
+[tool.setuptools]
+packages = ["focus_session_tracker"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
